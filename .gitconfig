@@ -1,11 +1,19 @@
 [user]
 	name = Salif Mehmed
-	email = salif@programmer.net
+	email = salifm@salifm.com
+	signingKey = 3618C3E5501E9291
+[commit]
+	gpgSign = true
 [core]
-	editor = vim
+	editor = micro
 [credential]
 	helper = /usr/lib/git-core/git-credential-libsecret
 [diff]
 	tool = kdiff3
 [merge]
 	tool = kdiff3
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
