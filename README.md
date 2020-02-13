@@ -1,13 +1,10 @@
 # My dotfiles
 
-## About me
-
-* **Name**: Salif Mehmed
-* **Bio**: Software Developer
-* **WebSite**: [salifm.com](https://salifm.com/)
-* **Email**: [salifm@salifm.com](mailto:salifm@salifm.com)
-
 ## Screenshots
+
+![Salif Mehmed](other/screenshots/salifm.png)
+
+---
 
 ![Salif Mehmed - Neofetch](other/screenshots/salifm_neofetch.png)
 
