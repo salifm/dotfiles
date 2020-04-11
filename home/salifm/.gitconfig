@@ -6,12 +6,6 @@
 	gpgSign = true
 [core]
 	editor = micro
-[credential]
-	helper = /usr/lib/git-core/git-credential-libsecret
-[diff]
-	tool = kdiff3
-[merge]
-	tool = kdiff3
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
