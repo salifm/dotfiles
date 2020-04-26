@@ -11,3 +11,6 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
+
+[alias]
+	pushall = !git remote | xargs -L1 git push --all

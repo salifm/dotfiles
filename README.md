@@ -1,22 +1,9 @@
 # My dotfiles
 
-## Screenshots
+## Cinnamon
 
-![Salif Mehmed](other/screenshots/salifm.png)
+![Salif Mehmed - Cinnamon - Screenshot](other/screenshots/cinnamon.png)
 
----
+## i3
 
-![Salif Mehmed - Neofetch](other/screenshots/salifm_neofetch.png)
-
----
-
-![Salif Mehmed - Themes](other/screenshots/salifm_themes.png)
-
----
-
-![Salif Mehmed - Fonts](other/screenshots/salifm_fonts.png)
-
----
-
-![Salif Mehmed - Programs](other/screenshots/salifm_programs.png)
-
+![Salif Mehmed - i3 - Screenshot](other/screenshots/i3.png)
