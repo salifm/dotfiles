@@ -97,15 +97,13 @@ bindsym Print exec gnome-screenshot
 bindsym $mod+Print exec gnome-screenshot --interactive
 
 exec --no-startup-id dunst
-exec --no-startup-id nm-applet
-exec --no-startup-id clipit &
-exec --no-startup-id fluxgui &
 # exec --no-startup-id picom -b
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
 exec --no-startup-id numlockx on
 exec --no-startup-id feh --bg-fill '.config/i3/wallpaper.jpg'
+exec dex -ae Cinnamon
 
 bar {
         status_command i3status
