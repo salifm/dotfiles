@@ -1,5 +1,7 @@
-export QT_QPA_PLATFORMTHEME="qt5ct"
-# export QT_QPA_PLATFORMTHEME=gtk2
+
+export QT_QPA_PLATFORMTHEME=qt5ct
+export GPG_TTY=/usr/bin/tty
 export EDITOR=/usr/bin/micro
-export VISUAL=/usr/bin/gedit
-export PATH=$PATH:$HOME/go/bin
+export GOPATH=$HOME/go
+export GOROOT=/usr/lib/go
+export PATH=$PATH:$GOPATH/bin:$HOME/.local/bin

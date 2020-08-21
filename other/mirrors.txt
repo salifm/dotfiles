@@ -1,6 +1,0 @@
-git@github.com:salifm/dotfiles.git
-git@gitlab.com:salifm/dotfiles.git
-git@bitbucket.org:salifm/dotfiles.git
-git@gitea.com:salifm/dotfiles.git
-git@codeberg.org:salifm/dotfiles.git
-git@gitee.com:salifm/dotfiles.git

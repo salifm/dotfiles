@@ -4,6 +4,8 @@
 	signingKey = 3618C3E5501E9291
 [commit]
 	gpgSign = true
+[pull]
+	rebase = false
 [core]
 	editor = micro
 [filter "lfs"]
@@ -11,6 +13,7 @@
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
-
+[gpg]
+	program = gpg2
 [alias]
 	pushall = !git remote | xargs -L1 git push --all
