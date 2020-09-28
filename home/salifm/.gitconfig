@@ -8,8 +8,6 @@
 	rebase = false
 [core]
 	editor = micro
-[gpg]
-	program = gpg2
 [alias]
 	pushall = !git remote | xargs -L1 git push --all
 [tag]
