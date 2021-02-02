@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-mkdir -p /run/media/salifm/$1
-mount -o loop,rw,sync /home/salifm/.local/share/imgs/$1.img /run/media/salifm/$1

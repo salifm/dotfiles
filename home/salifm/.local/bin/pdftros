@@ -1,2 +1,0 @@
-#!/usr/bin/sh
-java -jar ~/.local/share/pdftros/pdftros.jar "$@"

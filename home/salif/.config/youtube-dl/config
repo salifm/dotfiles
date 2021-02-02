@@ -2,4 +2,3 @@
 --add-metadata
 --merge-output-format mkv
 --prefer-ffmpeg
---cookies=~/.local/share/cc/c.txt

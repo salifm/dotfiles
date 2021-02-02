@@ -1,7 +1,7 @@
 [user]
 	name = Salif Mehmed
-	email = salifm@protonmail.com
-	signingKey = 7C81F2D0E02B7A15
+	email = mail@salif.eu
+	signingKey = 582BF44B568859DA
 [commit]
 	gpgsign = true
 [pull]
@@ -10,9 +10,9 @@
 	editor = micro
 [alias]
 	pushall = !git remote | xargs -L1 git push --all
+	slog = !git log --graph --decorate --oneline
 [tag]
 	forceSignAnnotated = true
-
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
