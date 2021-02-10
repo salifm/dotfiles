@@ -1,18 +1,14 @@
 {
-    "editor.fontFamily": "monospace, 'Operator Mono Lig', 'Operator Mono', 'Source Code Pro'",
+    "editor.fontFamily": "monospace, 'Operator Mono', 'Source Code Pro'",
     "go.formatTool": "goimports",
-    "go.autocompleteUnimportedPackages": true,
     "go.buildOnSave": "off",
     "go.lintOnSave": "off",
     "editor.insertSpaces": false,
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Flatland Monokai",
-    "markdown.preview.fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif",
     "terminal.external.linuxExec": "gnome-terminal",
     "terminal.integrated.fontFamily": "monospace",
-    "editor.fontLigatures": true,
-    "go.useLanguageServer": true,
     "keyboard.dispatch": "keyCode",
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "editor.autoClosingBrackets": "never",
+    "workbench.colorTheme": "Flatland Monokai",
 }

@@ -1,47 +1,22 @@
-# https://github.com/salifm/dotfiles
-# exec --no-startup-id "setxkbmap us,bgc -variant colemak,basic"
-
 set $mod Mod4
+
+font pango:monospace 9
 floating_modifier $mod
-
-hide_edge_borders both
-new_window pixel 1
-new_float pixel 1
 focus_follows_mouse no
+default_orientation horizontal
+workspace_layout tabbed
+default_border pixel 1
+hide_edge_borders both
+#gaps inner 10
+workspace_auto_back_and_forth yes
+client.focused #17917a #17917a #ffffff #17917a #17917a
 
-font pango:monospace 8
+# ---
 
-bindsym $mod+q kill
-bindsym $mod+Shift+q exec --no-startup-id i3lock -c 000000
-bindsym $mod+w layout tabbed
-bindsym $mod+f layout toggle split
-bindsym $mod+p layout stacking
-
-bindsym $mod+t exec i3-dmenu-desktop
-bindsym $mod+Shift+t exec dmenu_run
-
-bindsym $mod+h split h
-bindsym $mod+v split v
-
-bindsym $mod+n fullscreen toggle
-
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+Return exec gnome-terminal
-bindsym $mod+k exec nemo
-bindsym $mod+b exec brave
-
-bindsym $mod+space floating toggle
-bindsym $mod+Shift+space focus mode_toggle
-
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+set $left n
+set $down e
+set $up i
+set $right o
 
 set $ws1 "1"
 set $ws2 "2"
@@ -53,6 +28,38 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
+
+# ---
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
+
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+bindsym Print exec --no-startup-id gnome-screenshot
+bindsym $mod+Print exec --no-startup-id gnome-screenshot --interactive
+
+bindsym $mod+Return exec --no-startup-id i3-sensible-terminal
+bindsym $mod+space floating toggle
+bindsym $mod+Shift+space focus mode_toggle
+
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
+
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
+
+# ---
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -76,35 +83,68 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# ---
+
+bindsym $mod+q kill
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Iskash li da izlezesh?' -B 'Da' 'i3-msg exit'"
+bindsym $mod+w layout tabbed
+bindsym $mod+f fullscreen toggle
+bindsym $mod+l exec --no-startup-id i3lock -c 000000
+#bindsym $mod+bracketleft
+#bindsym $mod+Shift+bracketleft
+#bindsym $mod+bracketright
+#bindsym $mod+Shift+bracketright
+
+# ---
+
+bindsym $mod+a focus parent
+bindsym $mod+r mode "resize"
+bindsym $mod+Shift+r restart
+bindsym $mod+s layout stacking
+bindsym $mod+t layout toggle split
+bindsym $mod+d focus child
+bindsym $mod+h split h
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# ---
+
+bindsym $mod+Shift+c reload
+bindsym $mod+v split v
+bindsym $mod+b exec --no-startup-id brave
+bindsym $mod+k exec --no-startup-id nemo
+bindsym $mod+m exec --no-startup-id j4-dmenu-desktop
+bindsym $mod+Shift+m exec --no-startup-id dmenu_run
 bindsym $mod+comma workspace prev
 bindsym $mod+period workspace next
 
-bindsym $mod+bracketleft reload
-bindsym $mod+Shift+bracketleft restart
-bindsym $mod+bracketright exec "i3-nagbar -t warning -m 'exit?' -B 'true' 'i3-msg exit'"
-bindsym $mod+Shift+bracketright exit
+# ---
 
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+mode "resize" {
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $down       resize grow height 10 px or 10 ppt
+        bindsym $up         resize shrink height 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
-bindsym Print exec gnome-screenshot
-bindsym $mod+Print exec gnome-screenshot --interactive
-
-exec --no-startup-id dunst
-# exec --no-startup-id picom -b
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock -c 000000 --nofork
-exec --no-startup-id numlockx on
-exec --no-startup-id feh --bg-fill '.config/i3/wallpaper.jpg'
-exec dex -ae Cinnamon
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
 
 bar {
         status_command i3status
+        font pango:monospace 9
+        colors {
+                background #1a1c23
+                focused_workspace #12715f #17917a #ffffff
+        }
 }
+
+exec --no-startup-id set-wallpaper
