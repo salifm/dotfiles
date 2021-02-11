@@ -1,0 +1,47 @@
+# i3blocks configuration file
+
+# Global properties
+separator=true
+separator_block_width=15
+
+[volume]
+command=./bin/volume
+LABEL=v 
+interval=once
+signal=10
+#STEP=5%
+MIXER=pulse
+#SCONTROL=[determined automatically]
+#NATURAL_MAPPING=0
+
+[backlight]
+command=./bin/backlight
+label=k 
+interval=once
+signal=11
+STEP_SIZE=5
+#USE_SUDO=0
+
+[battery]
+command=./bin/battery
+interval=30
+LABEL=b 
+#LABEL=⚡
+#BAT_NUMBER=0
+
+[memory]
+command=./bin/memory
+#label=
+interval=20
+
+[temperature]
+command=./bin/temperature
+interval=30
+#LABEL=
+#T_WARN=70
+#T_CRIT=90
+#SENSOR_CHIP=""
+
+[time]
+command=date '+%H:%M:%S %d-%m-%Y'
+interval=5
