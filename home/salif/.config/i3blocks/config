@@ -6,17 +6,17 @@ separator_block_width=15
 
 [volume]
 command=./bin/volume
-LABEL=v 
+LABEL=v: 
 interval=once
 signal=10
 #STEP=5%
-MIXER=pulse
+#MIXER=pulse
 #SCONTROL=[determined automatically]
 #NATURAL_MAPPING=0
 
 [backlight]
 command=./bin/backlight
-label=k 
+label=k: 
 interval=once
 signal=11
 STEP_SIZE=5
@@ -24,8 +24,8 @@ STEP_SIZE=5
 
 [battery]
 command=./bin/battery
-interval=30
-LABEL=b 
+interval=60
+LABEL=b: 
 #LABEL=⚡
 #BAT_NUMBER=0
 
@@ -36,12 +36,16 @@ interval=20
 
 [temperature]
 command=./bin/temperature
-interval=30
+interval=60
 #LABEL=
 #T_WARN=70
 #T_CRIT=90
 #SENSOR_CHIP=""
 
+[date]
+command=date '+%a, %e %b %Y'
+interval=60
+
 [time]
-command=date '+%H:%M:%S %d-%m-%Y'
-interval=5
+command=date '+%R'
+interval=3
